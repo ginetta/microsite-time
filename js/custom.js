@@ -26,7 +26,7 @@ setTimeFromSunriseData = function(data) {
   setNight(time);
 }
 
-$.get('http://api.sunrise-sunset.org/json?lat=47.3744367&lng=8.528176499999999&date=today&formatted=0', function(data){
+$.get('https://api.sunrise-sunset.org/json?lat=47.3744367&lng=8.528176499999999&date=today&formatted=0', function(data){
   if('results' in data) {
     setTimeFromSunriseData(data);
   }
@@ -34,7 +34,7 @@ $.get('http://api.sunrise-sunset.org/json?lat=47.3744367&lng=8.528176499999999&d
 
 if(navigator.geolocation){
   navigator.geolocation.getCurrentPosition(function(position){
-    $.get('http://api.sunrise-sunset.org/json?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&date=today&formatted=0', function(data){
+    $.get('https://api.sunrise-sunset.org/json?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&date=today&formatted=0', function(data){
       if('results' in data) {
         setTimeFromSunriseData(data);
       }
